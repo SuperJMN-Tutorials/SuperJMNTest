@@ -17,13 +17,14 @@
       <ControlTemplate>
         <DockPanel>
           <Panel>
-            <TextBox Watermark="{TemplateBinding LabelWatermark">
-              <Grid RowDefinition="Auto,Auto">
+              <Grid RowDefinitions="Auto,Auto">
                 <TextBlock Grid.Row="0"
-                           Foreground="{StaticRessource LabelFieldBrush}"
+                           Foreground="{DynamicResource LabelFieldBrush}"
                            Text="{TemplateBinding LabelField}"/>
+
+                <TextBox Grid.Row="0"
+                         Watermark="{TemplateBinding LabelWatermark}"/>
               </Grid>
-            </TextBox>
           </Panel>
         </DockPanel>
       </ControlTemplate>

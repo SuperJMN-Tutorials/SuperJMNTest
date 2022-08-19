@@ -50,7 +50,7 @@ namespace SuperJMNTest.Controls
 					$"^[0-9]+$", RegexOptions.Compiled);
 			_regexIsLettersOptionalHyphen =
 				new Regex(
-					$@"^[A-Za-z]+.\-?.[A-Za-z]+*$", RegexOptions.Compiled);
+					$@"^[A-Za-z]+.(\-.[A-Za-z]+)*$", RegexOptions.Compiled);
 			_regexAreCapsCorrect =
 				new Regex(
 					$@"^[A-Z].[a-z]+.(\-.[A-Z])?.[a-z]+$", RegexOptions.Compiled);
