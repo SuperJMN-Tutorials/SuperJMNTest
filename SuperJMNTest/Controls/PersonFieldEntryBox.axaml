@@ -1,0 +1,32 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:SuperJMNTest.Controls;assembly=SuperJMNTest">
+  <Design.PreviewWith>
+    <c:PersonFieldEntryBox IsReadOnly="True" />
+  </Design.PreviewWith>
+  <Styles.Resources>
+    <SolidColorBrush x:Key="LabelFieldBrush" Color="#387DB4" />
+    <SolidColorBrush x:Key="BorderTextBoxColor" Color="#FFEBEFF2"/>
+    <Thickness x:Key="BorderTextBoxThickness">0,0,0,2</Thickness>
+  </Styles.Resources>
+
+  <Style Selector="c|PersonFieldEntryBox">
+    <Setter Property="Cursor" Value="IBeam" />
+    <Setter Property="BorderThickness" Value="{DynamicResource BorderTextBoxThickness}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DockPanel>
+          <Panel>
+            <TextBox Watermark="{TemplateBinding LabelWatermark">
+              <Grid RowDefinition="Auto,Auto">
+                <TextBlock Grid.Row="0"
+                           Foreground="{StaticRessource LabelFieldBrush}"
+                           Text="{TemplateBinding LabelField}"/>
+              </Grid>
+            </TextBox>
+          </Panel>
+        </DockPanel>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
